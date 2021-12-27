@@ -53,7 +53,8 @@ body {
 
 .todo-list {
     min-width: 30%;
-    list-style-type: none;
+    list-style-type: decimal;
+    /* counter-reset: Roziya; */
 }
 
 .todo-div  {
@@ -70,7 +71,12 @@ body {
 .todo-item {
     flex: 1;
     padding: 0 0.5rem;
+    /* counter-increment: Roziya; */
 }
+/* .todo-item::before {
+    content:counter(Roziya);
+    color:#8BC6EC;
+} */
 .complate-btn,
 .trash-btn {
     background: rgb(221, 107, 107);
