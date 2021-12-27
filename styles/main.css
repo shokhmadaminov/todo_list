@@ -11,6 +11,8 @@ body {
     color: #fff;
     font-family: 'Play', sans-serif;
     overflow-y: scroll;
+    padding-top: 5rem;
+    position: relative;
 }
 
 .todo-header {
@@ -110,14 +112,24 @@ body {
 
 /* MODAL */
 .modal {
-    
+    width: 30%;
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.5) 100%, rgba(255, 0, 0, 0.5) 100%);
+    border: solid red 1px;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 8px;
+    opacity: 0.6;
 }
 
 .hidden {
-
+    display: none;
 }
 
 .modal-text {
-
-
 }
