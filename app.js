@@ -2,7 +2,9 @@
 const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
-
+const modal = document.querySelector('.modal')
+const modalText = document.querySelector('.modal-text')
+todoInput.focus()
 // EVENTLISTENERS
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
@@ -44,6 +46,7 @@ function deleteCheck(e) {
 
         todo.addEventListener('transitionend', function() {
         todo.remove()
+        showModal('Delete Todo')
         })
     }
 
@@ -51,4 +54,27 @@ function deleteCheck(e) {
         const todo = item.parentElement;
         todo.classList.toggle('complated')
     }
+}
+const data = todoList.childNodes
+
+document.addEventListener('keydown', (e)=> {
+if(data.length > 0) {
+    if(e.keyCode == 46) {
+        const todo = data[data.length - 1];
+        todo.classList.add('fall')
+
+        todo.addEventListener('transitionend', function() {
+        todo.remove();
+        showModal('Delete Todo')
+        })
+    }
+}
+})
+
+function showModal(m) {
+    modalText.textContent = m
+    modal.classList.remove('hidden')
+    setTimeout(()=> {
+        modal.classList.add('hidden')
+    },2000)
 }
