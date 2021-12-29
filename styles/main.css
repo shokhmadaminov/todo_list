@@ -17,7 +17,7 @@ body {
 
 .todo-header {
     font-family: 'Courgette', cursive;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .todo-header, 
@@ -35,6 +35,13 @@ body {
     border: none;
     background: #fff;
     outline: none;
+}
+
+.todo-input {
+    border-radius: 8px 0px 0px 8px;
+}
+.todo-button{
+    border-radius: 0 8px 8px 0px;
 }
 
 .todo-button {
@@ -57,7 +64,6 @@ body {
 .todo-list {
     min-width: 30%;
     list-style-type: decimal;
-    /* counter-reset: Roziya; */
 }
 
 .todo-div  {
@@ -74,12 +80,8 @@ body {
 .todo-item {
     flex: 1;
     padding: 0 0.5rem;
-    /* counter-increment: Roziya; */
 }
-/* .todo-item::before {
-    content:counter(Roziya);
-    color:#8BC6EC;
-} */
+
 .complate-btn,
 .trash-btn {
     background: rgb(221, 107, 107);
@@ -105,7 +107,6 @@ body {
 
 .fall {
     transform: translateY(8rem) rotateZ(-30deg);
-    /* transform: translateY(8rem) rotateZ(20deg); */
     opacity: 0;
 }
 
