@@ -3,7 +3,9 @@ const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
 const modal = document.querySelector('.modal')
+const greenModal = document.querySelector('.greenModal')
 const modalText = document.querySelector('.modal-text')
+const greeenModalText = document.querySelector('.greenModal-text')
 todoInput.focus()
 // EVENTLISTENERS
 todoButton.addEventListener('click', addTodo);
@@ -17,6 +19,7 @@ function addTodo(event) {
     } else{
         const todoDiv = document.createElement('div')
         todoDiv.classList.add('todo-div')
+        greenModalF(`Siz yangi ro'yhat qo'shdingiz...!`)
     
         const newLi = document.createElement('li')
         newLi.innerText = todoInput.value
@@ -79,5 +82,13 @@ function showModal(m) {
     modal.classList.remove('hidden')
     setTimeout(()=> {
         modal.classList.add('hidden')
+    },3000)
+}
+
+function greenModalF(t) {
+    greeenModalText.textContent = t
+    greenModal.classList.remove('hidden')
+    setTimeout(()=> {
+        greenModal.classList.add('hidden')
     },3000)
 }
