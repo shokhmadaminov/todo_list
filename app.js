@@ -12,28 +12,31 @@ todoList.addEventListener('click', deleteCheck);
 // FUNCTIONS 
 function addTodo(event) {
     event.preventDefault();
-
-    const todoDiv = document.createElement('div')
-    todoDiv.classList.add('todo-div')
-
-    const newLi = document.createElement('li')
-    newLi.innerText = todoInput.value
-    newLi.classList.add('todo-item')
-    todoDiv.appendChild(newLi)
-
-    const complatedButton = document.createElement('button')
-    complatedButton.innerHTML= '<i class="fas fa-check"></i>'
-    complatedButton.classList.add('complate-btn')
-    todoDiv.appendChild(complatedButton)  
-
-    const trashButton = document.createElement('button')
-    trashButton.innerHTML= '<i class="fas fa-trash"></i>'
-    trashButton.classList.add('trash-btn')
-    todoDiv.appendChild(trashButton)
-
-    todoList.appendChild(todoDiv)
-
-    todoInput.value = '';
+    if(todoInput.value.length < 1){
+        showModal(`Kechirasiz...! siz hali ro'yhatni yozmadingiz!`)
+    } else{
+        const todoDiv = document.createElement('div')
+        todoDiv.classList.add('todo-div')
+    
+        const newLi = document.createElement('li')
+        newLi.innerText = todoInput.value
+        newLi.classList.add('todo-item')
+        todoDiv.appendChild(newLi)
+    
+        const complatedButton = document.createElement('button')
+        complatedButton.innerHTML= '<i class="fas fa-check"></i>'
+        complatedButton.classList.add('complate-btn')
+        todoDiv.appendChild(complatedButton)  
+    
+        const trashButton = document.createElement('button')
+        trashButton.innerHTML= '<i class="fas fa-trash"></i>'
+        trashButton.classList.add('trash-btn')
+        todoDiv.appendChild(trashButton)
+    
+        todoList.appendChild(todoDiv)
+    
+        todoInput.value = '';
+    }
 }
 
 
@@ -46,7 +49,7 @@ function deleteCheck(e) {
 
         todo.addEventListener('transitionend', function() {
         todo.remove()
-        showModal('Delete Todo')
+        showModal(`Siz ro'yhatni o'chirdingiz`)
         })
     }
 
@@ -76,5 +79,5 @@ function showModal(m) {
     modal.classList.remove('hidden')
     setTimeout(()=> {
         modal.classList.add('hidden')
-    },2000)
+    },3000)
 }
